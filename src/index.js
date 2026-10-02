@@ -1,4 +1,6 @@
 import { Client, GatewayIntentBits, Partials, Events } from "discord.js";
+import { startHttpServer } from "./httpServer.js";
+import { startTinyLegacyPoller } from "./tinyPoller.js";
 
 const TOKEN = process.env.DISCORD_BRIDGE_BOT_TOKEN;
 const WEBHOOK_URL = process.env.CURSOR_WEBHOOK_URL;
@@ -103,4 +105,6 @@ client.on(Events.MessageCreate, async (message) => {
   }
 });
 
+startHttpServer();
+startTinyLegacyPoller();
 client.login(TOKEN);

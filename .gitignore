@@ -4,3 +4,7 @@
 node_modules/
 bridge.log
 *.log
+/data/
+tiny-tokens.json
+tiny-seen-pedidos.json
+tiny-oauth-state.json
